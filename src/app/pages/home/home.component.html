@@ -1,0 +1,35 @@
+<div class="featured-container" >
+  <div>
+    <h1>
+      {{ playListName$ | async }}
+    </h1>
+
+    <mat-autocomplete #auto="matAutocomplete">
+      @for (playlistName of getAllPlaylistsNames$ | async; track playListName) {
+        <mat-option [value]="playlistName">{{playlistName}}</mat-option>
+      }
+    </mat-autocomplete>
+
+    <mat-form-field appearance="outline" class="name-filter">
+      <input id="playlist-name-filter" class="name-filter" matInput [placeholder]="'Search ' + (playListName$ | async)"
+             [formControl]="nameFilterControl" [matAutocomplete]="auto"/>
+      <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field>
+
+    <div id="error-retrieving-playlists" *ngIf="errorGettingPlaylists$ | async">
+      Oh no! there seems to be a problem retrieving playlists
+    </div>
+
+    <div *ngIf="!(errorGettingPlaylists$ | async)" class="playlist-card-container">
+      @for (playlist of (filteredPlaylists$ | async); track playlist.id) {
+        <app-playlist-card [playlistContent]="playlist"></app-playlist-card>
+      }
+    </div>
+
+    <div *ngIf="playlistsAreLoading$ | async">
+      <mat-spinner id="playlist-spinner"></mat-spinner>
+    </div>
+  </div>
+</div>
+
+

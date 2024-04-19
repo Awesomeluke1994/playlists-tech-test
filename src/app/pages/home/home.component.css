@@ -1,0 +1,23 @@
+.playlist-card-container {
+  max-width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.featured-container {
+  margin: 2rem 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 86vh;
+}
+
+.name-filter {
+  width: 30rem;
+}
+
+h1, .name-filter {
+  flex-grow: 0;
+}

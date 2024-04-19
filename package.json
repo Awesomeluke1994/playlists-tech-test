@@ -1,0 +1,53 @@
+{
+  "name": "playlists",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "cypress:open": "cypress open",
+    "cypress:e2e": "cypress run",
+    "cypress:components": "cypress run-ct",
+    "cypress:all": "cypress run && cypress run-ct",
+    "start:cypress:open": "start-server-and-test start http://localhost:4200 cypress:open",
+    "start:cypress:e2e": "start-server-and-test start http://localhost:4200 cypress:e2e",
+    "start:cypress:components": "start-server-and-test start http://localhost:4200 cypress:components",
+    "start:cypress:all": "start-server-and-test start http://localhost:4200 cypress:all"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^17.3.0",
+    "@angular/cdk": "^17.3.5",
+    "@angular/common": "^17.3.0",
+    "@angular/compiler": "^17.3.0",
+    "@angular/core": "^17.3.0",
+    "@angular/forms": "^17.3.0",
+    "@angular/material": "^17.3.5",
+    "@angular/platform-browser": "^17.3.0",
+    "@angular/platform-browser-dynamic": "^17.3.0",
+    "@angular/router": "^17.3.0",
+    "@ngrx/effects": "^17.2.0",
+    "@ngrx/store": "^17.2.0",
+    "local-cypress": "^1.2.6",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.3.5",
+    "@angular/cli": "^17.3.5",
+    "@angular/compiler-cli": "^17.3.0",
+    "@types/jasmine": "~5.1.0",
+    "cypress": "^13.7.3",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "start-server-and-test": "^2.0.3",
+    "typescript": "~5.4.2"
+  }
+}

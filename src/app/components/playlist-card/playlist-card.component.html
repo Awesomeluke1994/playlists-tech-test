@@ -1,0 +1,18 @@
+<mat-card [id]="playlistContent.id" class="playlist-card-container" (mouseenter)="showInfo()" (mouseleave)="hideInfo()">
+  <mat-card-content (click)="openPlaylistUrl()">
+    <div class="card-content-container" *ngIf="!showInformation">
+      <img id="playlist-image" [alt]="playlistContent.name" [ngSrc]="playlistContent.artwork" fill/>
+    </div>
+    <div class="card-information-container" *ngIf="showInformation">
+      <div class="card-information-headers">
+        <span class="header">Playlist Name</span>
+        <span id="playlist-name">{{ playlistContent.name }}</span>
+        <span id="playlist-curator-title" class="header">Playlist curator</span>
+        <span id="playlist-curator-name">{{ playlistContent.curator_name }}</span>
+      </div>
+      <div>
+        <button id="open-playlist-button" mat-raised-button color="primary" >Open Playlist</button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
