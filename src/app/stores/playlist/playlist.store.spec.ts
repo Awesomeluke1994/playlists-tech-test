@@ -1,13 +1,12 @@
 import {TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {Actions} from '@ngrx/effects';
 import {provideMockActions} from '@ngrx/effects/testing';
 import {Observable, of, throwError} from 'rxjs';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {PlaylistEffects} from './playlist.effects';
 import {PlaylistService} from '../../services/playlist.service';
 import {PlaylistActions} from './playlist.actions';
-import {FeaturedPlaylists, PlaylistContent} from "../../types/playlist";
+import {FeaturedPlaylists} from "../../types/playlist";
 import {describe} from "local-cypress";
 import {initialState, playlistReducer} from "./playlist.reducer";
 

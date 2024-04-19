@@ -3,6 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { PlaylistService } from './playlist.service';
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
 import {FeaturedPlaylists, Playlists} from "../types/playlist";
+import {Subject} from "rxjs";
 
 describe('PlaylistService', () => {
   let service: PlaylistService;
@@ -33,7 +34,9 @@ describe('PlaylistService', () => {
       }
     };
 
-    service.getPlaylists().subscribe((featuredPlaylists: FeaturedPlaylists) => {
+    const destroyed = new Subject<void>();
+
+    service.getPlaylists(destroyed).subscribe((featuredPlaylists: FeaturedPlaylists) => {
       expect(featuredPlaylists.name).toEqual('Summer Hits');
       expect(featuredPlaylists.content).toEqual([]);
     });
